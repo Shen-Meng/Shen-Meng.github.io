@@ -1,2 +1,2 @@
-#my-blog
-This is my bolg by using github pages and Hexo.
+#Shen Meng's blog
+This is my blog by using github pages and Hexo.
