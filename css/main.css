@@ -226,11 +226,11 @@ h6 {
   margin: 20px 0 15px;
 }
 h1 {
-  font-size: 22px;
+  font-size: 23.5px;
 }
 @media (max-width: 767px) {
   h1 {
-    font-size: 18px;
+    font-size: 19.5px;
   }
 }
 h2 {
@@ -242,35 +242,35 @@ h2 {
   }
 }
 h3 {
-  font-size: 18px;
+  font-size: 16.5px;
 }
 @media (max-width: 767px) {
   h3 {
-    font-size: 14px;
+    font-size: 12.5px;
   }
 }
 h4 {
-  font-size: 16px;
+  font-size: 13px;
 }
 @media (max-width: 767px) {
   h4 {
-    font-size: 12px;
+    font-size: 9px;
   }
 }
 h5 {
-  font-size: 14px;
+  font-size: 9.5px;
 }
 @media (max-width: 767px) {
   h5 {
-    font-size: 10px;
+    font-size: 5.5px;
   }
 }
 h6 {
-  font-size: 12px;
+  font-size: 6px;
 }
 @media (max-width: 767px) {
   h6 {
-    font-size: 8px;
+    font-size: 2px;
   }
 }
 p {
@@ -497,8 +497,8 @@ pre,
   margin: 20px 0;
   padding: 15px;
   font-size: 13px;
-  color: #c5c8c6;
-  background: #1d1f21;
+  color: #ccc;
+  background: #2d2d2d;
   line-height: 1.6;
 }
 pre,
@@ -515,7 +515,7 @@ code {
 }
 pre code {
   padding: 0;
-  color: #c5c8c6;
+  color: #ccc;
   background: none;
   text-shadow: none;
 }
@@ -535,7 +535,7 @@ pre code {
 }
 .highlight figcaption {
   font-size: 1em;
-  color: #c5c8c6;
+  color: #ccc;
   line-height: 1em;
   margin-bottom: 1em;
 }
@@ -549,10 +549,10 @@ pre code {
 }
 .highlight figcaption a {
   float: right;
-  color: #c5c8c6;
+  color: #ccc;
 }
 .highlight figcaption a:hover {
-  border-bottom-color: #c5c8c6;
+  border-bottom-color: #ccc;
 }
 .highlight .gutter pre {
   color: #666;
@@ -569,7 +569,7 @@ pre code {
   border: none;
 }
 pre .comment {
-  color: #969896;
+  color: #999;
 }
 pre .variable,
 pre .attribute,
@@ -583,7 +583,7 @@ pre .html .doctype,
 pre .css .id,
 pre .css .class,
 pre .css .pseudo {
-  color: #c66;
+  color: #f2777a;
 }
 pre .number,
 pre .preprocessor,
@@ -592,7 +592,7 @@ pre .literal,
 pre .params,
 pre .constant,
 pre .command {
-  color: #de935f;
+  color: #f99157;
 }
 pre .ruby .class .title,
 pre .css .rules .attribute,
@@ -605,11 +605,11 @@ pre .xml .cdata,
 pre .special,
 pre .number,
 pre .formula {
-  color: #b5bd68;
+  color: #9c9;
 }
 pre .title,
 pre .css .hexcolor {
-  color: #8abeb7;
+  color: #6cc;
 }
 pre .function,
 pre .python .decorator,
@@ -619,11 +619,11 @@ pre .ruby .title .keyword,
 pre .perl .sub,
 pre .javascript .title,
 pre .coffeescript .title {
-  color: #81a2be;
+  color: #69c;
 }
 pre .keyword,
 pre .javascript .function {
-  color: #b294bb;
+  color: #c9c;
 }
 .full-image.full-image.full-image {
   border: none;
@@ -1085,7 +1085,7 @@ pre .javascript .function {
   visibility: visible;
 }
 .posts-expand .post-body ul li {
-  list-style: circle;
+  list-style: square;
 }
 .posts-expand .post-body img {
   box-sizing: border-box;
@@ -1464,9 +1464,9 @@ pre .javascript .function {
   display: block;
   margin: 0 auto;
   padding: 2px;
-  max-width: 96px;
+  max-width: 136px;
   height: auto;
-  border: 2px solid #333;
+  border: 0px solid #333;
 }
 .site-author-name {
   margin: 5px 0 0;
@@ -1548,7 +1548,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff2ae8;
+  background: #e0a478;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1673,7 +1673,8 @@ pre .javascript .function {
   margin: 0 5px;
 }
 .powered-by,
-.theme-info {
+.theme-info,
+.modified-by {
   display: inline-block;
 }
 .powered-by {
@@ -1682,6 +1683,13 @@ pre .javascript .function {
 .powered-by::after {
   content: "|";
   padding-left: 10px;
+}
+.modified-by {
+  margin-left: 10px;
+}
+.modified-by::before {
+  content: "|";
+  padding-right: 10px;
 }
 .cc-license {
   margin-top: 10px;
