@@ -1,0 +1,634 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Mactype,优化," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="其实，微软的字体渲染问题也真是十分尴尬的一件事。为了兼容和平衡以及一大堆历史遗留问题，在字体渲染上，巨硬做出一些让步和牺牲还是在所难免的。不过在Windows10推出后，高分屏加dpi缩放的效果十分不错，比如我在网上看到的4K+200%的dpi缩放，不过考虑到很多软件对高分屏的资瓷问题，当然还有价格问题…掩面），我等穷小白为了保证较好的视觉效果，只能采用其他方式，而在Windows下可以使用Mac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mactype渲染--拯救Windows字体">
+<meta property="og:url" content="http://yoursite.com/2016/08/23/Mactype渲染-拯救Windows字体/index.html">
+<meta property="og:site_name" content="Simple & Naive">
+<meta property="og:description" content="其实，微软的字体渲染问题也真是十分尴尬的一件事。为了兼容和平衡以及一大堆历史遗留问题，在字体渲染上，巨硬做出一些让步和牺牲还是在所难免的。不过在Windows10推出后，高分屏加dpi缩放的效果十分不错，比如我在网上看到的4K+200%的dpi缩放，不过考虑到很多软件对高分屏的资瓷问题，当然还有价格问题…掩面），我等穷小白为了保证较好的视觉效果，只能采用其他方式，而在Windows下可以使用Mac">
+<meta property="og:image" content="http://yoursite.com/2016/08/23/Mactype渲染-拯救Windows字体/0.png">
+<meta property="og:image" content="http://yoursite.com/2016/08/23/Mactype渲染-拯救Windows字体/01.png">
+<meta property="og:image" content="http://yoursite.com/2016/08/23/Mactype渲染-拯救Windows字体/11.png">
+<meta property="og:image" content="http://yoursite.com/2016/08/23/Mactype渲染-拯救Windows字体/12.png">
+<meta property="og:image" content="http://yoursite.com/2016/08/23/Mactype渲染-拯救Windows字体/设置.png">
+<meta property="og:image" content="http://yoursite.com/2016/08/23/Mactype渲染-拯救Windows字体/字体图标.png">
+<meta property="og:image" content="http://yoursite.com/2016/08/23/Mactype渲染-拯救Windows字体/粗体渲染问题.png">
+<meta property="og:updated_time" content="2016-08-23T06:25:14.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mactype渲染--拯救Windows字体">
+<meta name="twitter:description" content="其实，微软的字体渲染问题也真是十分尴尬的一件事。为了兼容和平衡以及一大堆历史遗留问题，在字体渲染上，巨硬做出一些让步和牺牲还是在所难免的。不过在Windows10推出后，高分屏加dpi缩放的效果十分不错，比如我在网上看到的4K+200%的dpi缩放，不过考虑到很多软件对高分屏的资瓷问题，当然还有价格问题…掩面），我等穷小白为了保证较好的视觉效果，只能采用其他方式，而在Windows下可以使用Mac">
+<meta name="twitter:image" content="http://yoursite.com/2016/08/23/Mactype渲染-拯救Windows字体/0.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/08/23/Mactype渲染-拯救Windows字体/"/>
+
+  <title> Mactype渲染--拯救Windows字体 | Simple & Naive </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Simple & Naive</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Shen Meng's blog</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Mactype渲染--拯救Windows字体
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-08-23T14:25:14+08:00" content="2016-08-23">
+              2016-08-23
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/Skill/" itemprop="url" rel="index">
+                    <span itemprop="name">Skill</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o"></i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>其实，微软的字体渲染问题也真是十分尴尬的一件事。为了兼容和平衡以及一大堆历史遗留问题，在字体渲染上，巨硬做出一些让步和牺牲还是在所难免的。不过在Windows10推出后，高分屏加dpi缩放的效果十分不错，比如我在网上看到的4K+200%的dpi缩放，不过考虑到很多软件对高分屏的资瓷问题，当然还有价格问题…掩面），我等穷小白为了保证较好的视觉效果，只能采用其他方式，而在Windows下可以使用Mactype进行渲染，得到类似于苹果OS X的效果。<br>首先上图对比（所用字体均为微软雅黑）：<br><a id="more"></a><br>渲染前：<br><img src="/2016/08/23/Mactype渲染-拯救Windows字体/0.png" alt="[title]" title="[title]"><br><img src="/2016/08/23/Mactype渲染-拯救Windows字体/01.png" alt="[title]" title="[title]"><br>渲染后：<br><img src="/2016/08/23/Mactype渲染-拯救Windows字体/11.png" alt="[title]" title="[title]"><br><img src="/2016/08/23/Mactype渲染-拯救Windows字体/12.png" alt="[title]" title="[title]"><br>截图之后图片质量有所损失，不过可以看到是Windows的字体在不放大dpi的情况下渲染后的字体有些歪歪扭扭而且偏虚。用Mactype渲染后，有些人会觉得渲染后字体很漂亮，而有些人会觉得字体变得模糊而不想要渲染。因为相比于Windows的ClearType，Mactype将字体渲染得尽量平滑，感觉上会有一些模糊，但其实很多时候模糊是因为配置没调好。而且若修改系统默认字体，效果会更好。</p>
+<h2 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h2><blockquote>
+<p>MacType是中国网友FlyingSnow基于一个GDI++的开源项目开发的字体渲染软件。</p>
+</blockquote>
+<p>原作者FlyingSnow大神已经不再更新Mactype，最后一个版本的版本号为2013.1231.0（下载地址网上很多，这里放一个<a href="http://pan.baidu.com/s/1miya8Tq" target="_blank" rel="external">网盘链接</a>）。不过此版本能兼容至Windows 10 Version 1607（即Win10一周年更新版本）。假如已更新至该版本，只需替换两个<code>dll</code>文件即可，详细可见知乎：<a href="https://www.zhihu.com/question/49197567" target="_blank" rel="external">在 Windows 10 一周年更新中如何使用 MacType ?</a>。</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>安装完成后，打开用户向导，第一步是选择程序的加载方式，推荐选择Mactray托盘加载，这样在任务栏会显示一个托盘图标，方便进行配置操作。接着是让你挑选配置文件，默认有十多个配置文件，每个配置对于不同电脑效果都不一样，可以在任务栏托盘图表上右击弹出菜单后选择不同的配置文件进行尝试，以确定最适合自己的配置。然后是进阶配置，详细可看<a href="http://bbs.pcbeta.com/viewthread-1275802-1-1.html" target="_blank" rel="external">[文字工具] 不看你后悔！Mactype字体配置文件详细图文具体教程！再详细不过了！</a>。</p>
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>浏览器推荐是使用火狐或者谷歌。不过谷歌浏览器使用的是DirectWrite渲染，因此需要在浏览器中输入<code>chrome://flags</code>，将DirectWrit停用（参考：<a href="http://tieba.baidu.com/p/4197666762" target="_blank" rel="external">【Mactype】chrome高版本不适用mactype解决方法</a>）。不过蛋疼的是在Chrome在52版本之后，就把这个选项给移除了，不过方法还是有点。首先是可以去下载52以前的版本（挺难找的，直接在百度网盘搜索可找到）。还有一个方法就是使用岛国开发者更新的<a href="http://silight.hatenablog.jp/entry/MacTypePatch" target="_blank" rel="external">MacTypePatch</a>，日韩人民也饱受渲染方式的困扰，这个能够资瓷DirectWrite渲染，有网友贴图说Microsoft Edge已能被渲染，不过好像官方已经资瓷DirectWrite和Direct2D了<a href="http://tieba.baidu.com/p/4726600295?pn=1" target="_blank" rel="external">【Mactype】官方支持 directwrite 和 direct2d 设置了</a>，不过暂时还只有源码，期待大神编译的稳定版本。<br>而有关系统字体的替换，感觉现在效果还不错，就不折腾了，详情可以去<a href="http://tieba.baidu.com/f?kw=mactype" target="_blank" rel="external">mactype吧</a>。<br>我使用的是最稳定的Mactype_2013.1231.0版本，实测Chrome的菜单栏无法渲染，网页内容可渲染（这就够了- -）。Office 2013无法渲染，因为Office 2013也是采用DirectWrite渲染，不过可通过调整调整缩放效果获得较好的视觉效果，所以在Win下将dpi放大后其实效果还是很不错的。</p>
+<h2 id="关于网页字体"><a href="#关于网页字体" class="headerlink" title="关于网页字体"></a>关于网页字体</h2><p>系统自带的微软雅黑在大多数情况下是挺好的，但是有时候网页上小字号标题上的粗体会显得有点臃肿了。可以尝试一下方正的字体系列，个人觉得方正悠黑和方正兰亭黑作为网页阅读字体表现不错的，资瓷正版，移步去方正字库在淘宝上的官方网店（<a href="https://fangzhengziku.taobao.com/" target="_blank" rel="external">方正字库</a>）购买。家庭版的一套字体基本都是2元，不能更实惠了。<br>有些网页上的字体是自定样式的，浏览器自己设置的字体无法覆盖网页自己的样式，这时候要强制使用雅黑等字体的方法是添加扩展，比如Chrome下可使用扩展进行调整：<br><img src="/2016/08/23/Mactype渲染-拯救Windows字体/设置.png" alt="[title]" title="[title]"><br>而且可以自定义英文字体，比如可以将英文字体定为consolas后感觉十分GEEK，不过强制使用字体之后，会造成一些字体图标无法显示，而且粗体渲染会出一些问题，如下图：<br><img src="/2016/08/23/Mactype渲染-拯救Windows字体/字体图标.png" alt="[title]" title="[title]"><br><img src="/2016/08/23/Mactype渲染-拯救Windows字体/粗体渲染问题.png" alt="[title]" title="[title]"><br>想要高度自定义网页字体和样式可以采用<a href="https://userstyles.org/help/stylish" target="_blank" rel="external">Stylish</a>。</p>
+<h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2><p>希望图形学大牛能够解决渲染问题，各大软件厂商能够完美资瓷高分屏，其实在放大dpi情况下其实Windows的渲染是很不错的，不过仅限于系统自己的界面。。。很多软件一放大dpi就完全GG了。<br>因此我想要说的是，有钱还是入手MAC把。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Mactype/" rel="tag">#Mactype</a>
+          
+            <a href="/tags/优化/" rel="tag">#优化</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/19/使用Github Pages和Hexo搭建个人独立博客/" rel="next" title="使用Github Pages和Hexo搭建个人独立博客">
+                <i class="fa fa-chevron-left"></i> 使用Github Pages和Hexo搭建个人独立博客
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/show.png"
+               alt="Shen Meng" />
+          <p class="site-author-name" itemprop="name">Shen Meng</p>
+          <p class="site-description motion-element" itemprop="description">Ha?</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#开始"><span class="nav-number">1.</span> <span class="nav-text">开始</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">3.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于网页字体"><span class="nav-number">4.</span> <span class="nav-text">关于网页字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结束"><span class="nav-number">5.</span> <span class="nav-text">结束</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shen Meng</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+<div class="modified-by">
+  Modified by
+  <a class="theme-link" href="https://Shen-Meng.github.io/">
+    Shen Meng
+  </a>
+</div>
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
