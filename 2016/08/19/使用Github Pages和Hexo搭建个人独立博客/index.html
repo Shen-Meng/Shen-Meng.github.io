@@ -99,12 +99,12 @@
 <meta property="og:url" content="http://yoursite.com/2016/08/19/使用Github Pages和Hexo搭建个人独立博客/index.html">
 <meta property="og:site_name" content="Simple & Naive">
 <meta property="og:description" content="前言动机折腾了好久，终于可以写第一篇博文了。为什么要写博客？对于我来说，基本就是以下几点原因：">
-<meta property="og:image" content="http://yoursite.com/img0.png">
+<meta property="og:image" content="http://yoursite.com/2016/08/19/使用Github Pages和Hexo搭建个人独立博客/img0.png">
 <meta property="og:updated_time" content="2016-08-21T06:25:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用Github Pages和Hexo搭建个人独立博客">
 <meta name="twitter:description" content="前言动机折腾了好久，终于可以写第一篇博文了。为什么要写博客？对于我来说，基本就是以下几点原因：">
-<meta name="twitter:image" content="http://yoursite.com/img0.png">
+<meta name="twitter:image" content="http://yoursite.com/2016/08/19/使用Github Pages和Hexo搭建个人独立博客/img0.png">
 
 
 
@@ -387,7 +387,7 @@
 <h3 id="Markdown-编辑器"><a href="#Markdown-编辑器" class="headerlink" title="Markdown 编辑器"></a>Markdown 编辑器</h3><p>Markdown是一种轻量级的「标记语言」，简洁优雅，花十分钟就能大概熟悉Markdown（<a href="http://sspai.com/25137" target="_blank" rel="external">认识与入门 Markdown</a>）。<br>Windows下最有名，功能最强大的是<a href="http://markdownpad.com/" target="_blank" rel="external">MarkdownPad</a>。我现在在用<a href="http://pad.haroopress.com/" target="_blank" rel="external">Haroopad</a>，感觉还不错，还有一个开源的<a href="https://www.typora.io/" target="_blank" rel="external">Typora</a>也不错，界面比前两者要简洁优雅。</p>
 <h3 id="Github-相关配置"><a href="#Github-相关配置" class="headerlink" title="Github 相关配置"></a>Github 相关配置</h3><p>注册Github并且用SSH Key配置远程仓库。详细可以参考<a href="http://blog.sina.com.cn/s/blog_6e572cd60101qls0.html" target="_blank" rel="external">Git使用之设置SSH Key</a>。</p>
 <h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><p>使用Git bash或者其他命令行工具，输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure></p>
-<h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><h3 id="创建-repository"><a href="#创建-repository" class="headerlink" title="创建 repository"></a>创建 repository</h3><p>进入Github首页，点击页面中央的Start a project或页面右下角「New Repository」，进入以下界面。<br><img src="img0.png" alt=""><br>注意，假如你的用户名是<strong><em>XXX</em></strong>，那么你创建的repository的名字必须是<strong><em>XXX.github.io</em></strong>。命名之后Create repository即可。</p>
+<h2 id="开始使用"><a href="#开始使用" class="headerlink" title="开始使用"></a>开始使用</h2><h3 id="创建-repository"><a href="#创建-repository" class="headerlink" title="创建 repository"></a>创建 repository</h3><p>进入Github首页，点击页面中央的Start a project或页面右下角「New Repository」，进入以下界面。<br><img src="/2016/08/19/使用Github Pages和Hexo搭建个人独立博客/img0.png" alt=""><br>注意，假如你的用户名是<strong><em>XXX</em></strong>，那么你创建的repository的名字必须是<strong><em>XXX.github.io</em></strong>。命名之后Create repository即可。</p>
 <h3 id="本地部署"><a href="#本地部署" class="headerlink" title="本地部署"></a>本地部署</h3><p>在自己想要的位置创建本地文件夹，为了不让Git出现莫名其妙的错误，路径中最好不要有中文。在要创建的位置右键打开Git Bash，或者是打开Git Bash后cd切换到该路径。接着输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div></pre></td></tr></table></figure></p>
 <p>而我在执行<code>hexo init</code>命令后出现了错误，Git Bash报错：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$ hexo init</div><div class="line">module.js:327</div><div class="line">    throw err;</div><div class="line">    ^</div><div class="line">    </div><div class="line">Error: Cannot find module <span class="string">'C:\Computer Program\Git\Git\node_modules\hexo-cli\bin\hexo'</span></div><div class="line">    at Function.Module._resolveFilename (module.js:325:15)</div><div class="line">    at Function.Module._load (module.js:276:25)</div><div class="line">    at Function.Module.runMain (module.js:441:10)</div><div class="line">    at startup (node.js:139:18)</div><div class="line">    at node.js:968:3</div></pre></td></tr></table></figure></p>
 <p>这就十分奇怪了，错误信息中的<code>C:\Computer Program\Git\Git</code>是我Git的安装位置，Hexo肯定不是安装在这个位置，Git Bash怎么会去读取这个位置下的Hexo命令呢。网上也没有能解决我这个问题的方法。后面我找到了三个方法解决该问题：</p>
@@ -540,7 +540,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -551,7 +551,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -562,7 +562,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
